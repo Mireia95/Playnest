@@ -1,0 +1,15 @@
+.logo {
+  gap: 8px;
+  padding: var(--PN-padding-xs) var(--PN-padding-s);
+}
+
+.logo > img {
+  width: 24px;
+  height: 24px;
+}
+
+.logo > h3 {
+  background: var(--PN-colorTextLogo);
+  background-clip: text;
+  color: transparent;
+}

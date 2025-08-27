@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: none;
+  font-family: 'Baloo Bhai 2', sans-serif;
+}
+
+:root {
+  /* colors */
+  --PN-colorPrimary: #2e0046;
+  --PN-colorSecondary: #fff8f8;
+  --PN-colorSecondaryShadow: #d2d2d2;
+  --PN-colorTertiary: linear-gradient(90deg, #ffb1e9 0%, #acd8ff 100%);
+
+  --PN-colorTextPrimary: var(--PN-colorSecondary);
+  --PN-colorTextLogo: var(--PN-colorTertiary);
+  --PN-colorBG: var(--PN-colorPrimary);
+
+  /* margins */
+  --PN-margin-xs: 8px;
+  --PN-margin-s: 16px;
+  --PN-margin-m: 24px;
+  --PN-margin-l: 32px;
+  --PN-margin-xl: 40px;
+  --PN-margin-xxl: 48px;
+
+  --PN-padding-xs: 8px;
+  --PN-padding-s: 16px;
+  --PN-padding-m: 24px;
+  --PN-padding-l: 32px;
+  --PN-padding-xl: 40px;
+  --PN-padding-xxl: 48px;
+
+  --PN-gap-xs: 8px;
+  --PN-gap-s: 16px;
+  --PN-gap-m: 24px;
+  --PN-gap-l: 32px;
+  --PN-gap-xl: 40px;
+  --PN-gap-xxl: 48px;
+
+  --PN-border-radius: 8px;
+  --PN-border-radius-button: 8px;
+
+  --PN-header-height: 8svh;
+}
+
+body,
+#root {
+  min-height: 100svh;
+  background: var(--PN-colorBG);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
