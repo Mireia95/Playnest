@@ -1,0 +1,13 @@
+.card-game {
+  display: block;
+  width: 200px;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card-game > div {
+  width: 100%;
+  height: 100%;
+  background-color: #f3f8ff;
+}

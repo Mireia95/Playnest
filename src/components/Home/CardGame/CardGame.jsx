@@ -3,8 +3,10 @@ import './CardGame.css';
 
 const CardGame = ({ link, img, alt }) => {
   return (
-    <Link to={link}>
-      <img src={img} alt={alt}></img>
+    <Link to={link} className='card-game'>
+      <div className='flex'>
+        <img src={img} alt={alt}></img>
+      </div>
     </Link>
   );
 };

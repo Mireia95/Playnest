@@ -1,3 +1,55 @@
 main {
   min-height: 90svh;
+  padding: var(--PN-padding-xs) var(--PN-padding-s);
+  flex-direction: column;
+  justify-content: center;
+}
+
+#games {
+  width: 100%;
+  max-width: 800px;
+  justify-content: space-evenly;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.title {
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.title > div {
+  justify-content: center;
+  gap: 24px;
+  height: 80px;
+}
+
+.title > div > div {
+  width: 100px;
+}
+
+.title > div > h2 {
+  background: var(--PN-colorTextLogo);
+  background-clip: text;
+  color: transparent;
+  font-size: 40px;
+}
+
+.title > h3 {
+  color: var(--PN-colorTextPrimary);
+  font-size: 22px;
+  font-weight: 400;
+}
+
+@media (max-width: 500px) {
+  .title > div > h2 {
+    font-size: 30px;
+  }
+  .title > div > div {
+    width: 80px;
+  }
+  .title > h3 {
+    font-size: 18px;
+  }
 }
