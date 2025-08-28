@@ -12,7 +12,7 @@
 
 :root {
   /* colors */
-  --PN-colorPrimary: #2e0046;
+  --PN-colorPrimary: #190425;
   --PN-colorSecondary: #fff8f8;
   --PN-colorSecondaryShadow: #d2d2d2;
   --PN-colorTertiary: linear-gradient(90deg, #ffb1e9 0%, #acd8ff 100%);
@@ -20,6 +20,8 @@
   --PN-colorTextPrimary: var(--PN-colorSecondary);
   --PN-colorTextLogo: var(--PN-colorTertiary);
   --PN-colorBG: var(--PN-colorPrimary);
+
+  --SG-colorPrimary: #333344;
 
   /* margins */
   --PN-margin-xs: 8px;
@@ -58,4 +60,8 @@ body,
 .flex {
   display: flex;
   align-items: center;
+}
+
+button {
+  cursor: pointer;
 }

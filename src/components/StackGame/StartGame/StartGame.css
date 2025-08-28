@@ -1,0 +1,11 @@
+.start-stack-game {
+  padding: 10px 20px;
+  border: 1px solid var(--SG-colorPrimary);
+  font-size: 30px;
+  font-weight: 200;
+  z-index: 100;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}

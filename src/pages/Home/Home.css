@@ -11,6 +11,7 @@ main {
   justify-content: space-evenly;
   gap: 40px;
   flex-wrap: wrap;
+  margin-bottom: var(--PN-margin-s);
 }
 
 .title {

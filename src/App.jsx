@@ -8,14 +8,12 @@ import StackGame from './pages/StackGame/StackGame';
 const App = () => {
   return (
     <>
-      <main>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/pokemon' element={<PokemonHome />} />
-          <Route path='/quiztime' element={<QuizHome />} />
-          <Route path='/stackgame' element={<StackGame />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/pokemon' element={<PokemonHome />} />
+        <Route path='/quiztime' element={<QuizHome />} />
+        <Route path='/stackgame' element={<StackGame />} />
+      </Routes>
     </>
   );
 };

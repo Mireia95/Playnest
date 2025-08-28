@@ -1,5 +1,8 @@
+import ThreeScene from '../../components/StackGame/ThreeScene/ThreeScene';
+import './StackGame.css';
+
 const StackGame = () => {
-  return <div>StackGame</div>;
+  return <ThreeScene />;
 };
 
 export default StackGame;

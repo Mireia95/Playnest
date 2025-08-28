@@ -1,0 +1,9 @@
+#info {
+  text-align: center;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+}

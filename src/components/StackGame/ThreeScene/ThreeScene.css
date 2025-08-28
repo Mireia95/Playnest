@@ -1,0 +1,11 @@
+.scene {
+  width: 100%;
+  height: 100svh;
+  border: 1px solid var(--SG-colorPrimary);
+  margin: auto;
+  position: relative;
+}
+
+.scene > canvas {
+  width: 100%;
+}
