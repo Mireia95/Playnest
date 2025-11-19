@@ -25,7 +25,7 @@ const Home = () => {
           />
           <CardGame
             link='/guesscolor'
-            img='./assets/Quiztime.png'
+            img='./assets/GuessTheColor.png'
             alt='quiz time'
           />
           <CardGame
