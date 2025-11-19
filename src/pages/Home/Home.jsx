@@ -24,7 +24,7 @@ const Home = () => {
             alt='pokemon battle'
           />
           <CardGame
-            link='/quiztime'
+            link='/guesscolor'
             img='./assets/Quiztime.png'
             alt='quiz time'
           />
