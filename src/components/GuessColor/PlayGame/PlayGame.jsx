@@ -7,8 +7,8 @@ const PlayGame = () => {
   const [colorText, setColorText] = useState(['']);
 
   useEffect(() => {
-    const newArray = getRandomColors(colors);
-    setColorText(newArray.text);
+    /*   const newArray = getRandomColors(colors);
+    setColorText(newArray.text); */
   }, []);
 
   return (
