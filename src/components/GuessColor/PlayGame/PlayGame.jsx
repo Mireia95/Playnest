@@ -1,18 +1,21 @@
-import CardColor from '../CardColor/CardColor';
+import { useState } from 'react';
+import CardsColorDiv from '../CardsColorDiv/CardsColorDiv';
 import './PlayGame.css';
+import { useEffect } from 'react';
 
 const PlayGame = () => {
-  console.log('hola');
+  const [colorText, setColorText] = useState(['']);
+
+  useEffect(() => {
+    const newArray = getRandomColors(colors);
+    setColorText(newArray.text);
+  }, []);
+
   return (
     <>
       <div>Time</div>
-      <div> color </div>
-      <div className='cardsColor'>
-        <CardColor />
-        <CardColor />
-        <CardColor />
-        <CardColor />
-      </div>
+      <div> green </div>
+      <CardsColorDiv text={'green'} />
     </>
   );
 };

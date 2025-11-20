@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import './ThreeScene.css';
 import StartGame from '../StartGame/StartGame';
-import BackLink from '../BackLink/BackLink';
-import { getNextCubeColor } from '../../../utils/StackGame/getNextCubeColor';
 import { Canvas } from '@react-three/fiber';
 import Box from '../Box/Box';
+import BackLink from '../../General/BackLink/BackLink';
 
 const ThreeScene = () => {
   //ref para montar ThreeScene solo en el div

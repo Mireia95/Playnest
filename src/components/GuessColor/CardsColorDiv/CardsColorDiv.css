@@ -1,0 +1,9 @@
+.cardsColor {
+  width: 90%;
+  max-width: 350px;
+  max-height: 350px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* siempre 2 columnas */
+  grid-template-rows: repeat(2, auto); /* siempre 2 filas */
+  gap: 24px; /* mínimo 24px */
+}

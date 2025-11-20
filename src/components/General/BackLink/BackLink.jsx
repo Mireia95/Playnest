@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const BackLink = () => {
   return (
     <Link to='/' className='back-game'>
-      Back
+      <img src='./assets/home.svg' alt='back to game menu' />
+      Back to game menu
     </Link>
   );
 };

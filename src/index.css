@@ -62,6 +62,7 @@ body,
   align-items: center;
 }
 
-button {
+butto,
+a {
   cursor: pointer;
 }

@@ -1,7 +1,16 @@
 import './CardColor.css';
 
-const CardColor = () => {
-  return <div>CardColor</div>;
+const CardColor = ({ ele, onClick }) => {
+  console.log(ele);
+  return (
+    <div
+      className='cardColor'
+      onClick={onClick}
+      style={{ backgroundColor: ele?.color }}
+    >
+      <p style={{ color: ele?.textColor }}> {ele ? ele.text : ''} </p>
+    </div>
+  );
 };
 
 export default CardColor;

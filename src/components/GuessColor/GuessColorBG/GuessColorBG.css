@@ -1,5 +1,15 @@
 #guessColor {
   width: 100%;
   height: 100svh;
-  background-color: white;
+  background: linear-gradient(var(--GC-BGColor-01), var(--GC-BGColor-02));
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  flex-direction: column;
+  position: relative;
+}
+
+#guessColor > *:not(.imageBGcolors) {
+  z-index: 1;
 }

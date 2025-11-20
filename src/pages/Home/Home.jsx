@@ -20,7 +20,7 @@ const Home = () => {
         <section id='games' className='flex'>
           <CardGame
             link='/pokemon'
-            img='./assets/PokemonBattle.png'
+            img='./assets/PokemonBattleCard.png'
             alt='pokemon battle'
           />
           <CardGame
