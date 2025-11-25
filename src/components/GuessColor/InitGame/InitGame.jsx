@@ -1,6 +1,6 @@
-import BackLink from '../../General/BackLink/BackLink';
-import ButtonLink from '../ButtonLink/ButtonLink';
-import './InitGame.css';
+import BackLink from '../../General/BackLink/BackLink'
+import ButtonLink from '../ButtonLink/ButtonLink'
+import './InitGame.css'
 
 const InitGame = () => {
   return (
@@ -30,7 +30,7 @@ const InitGame = () => {
 
       <BackLink />
     </>
-  );
-};
+  )
+}
 
-export default InitGame;
+export default InitGame

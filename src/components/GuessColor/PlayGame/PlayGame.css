@@ -1,0 +1,11 @@
+#guessColor .infoBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#guessColor .infoBar > .points {
+  font-family: 'Baloo Bhai 2', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
