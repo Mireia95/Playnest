@@ -2,6 +2,7 @@ import { useState } from 'react';
 import CardsColorDiv from '../CardsColorDiv/CardsColorDiv';
 import './PlayGame.css';
 import { useEffect } from 'react';
+import GameOver from '../GameOver/GameOver';
 
 const PlayGame = () => {
   const [colorText, setColorText] = useState(['']);
@@ -16,6 +17,7 @@ const PlayGame = () => {
       <div>Time</div>
       <div> green </div>
       <CardsColorDiv text={'green'} />
+      <GameOver />
     </>
   );
 };
