@@ -23,10 +23,9 @@ const setColorPrint = (array, dispatch) => {
     text: array[randomColorPos02].text
   }
   dispatch({ type: 'SET_COLOR_PRINT', payload: colorPrint })
-  console.log(colorPrint)
 }
 
-export const compareColors = (colorSelected, colorPrint, dispatch) => {
+export const compareColors = ({ colorSelected, colorPrint, dispatch }) => {
   if (colorSelected.text === colorPrint.text) {
     dispatch({ type: 'SUM_POINTS' })
   }

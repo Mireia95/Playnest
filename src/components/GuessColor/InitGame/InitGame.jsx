@@ -13,7 +13,11 @@ const InitGame = () => {
       </div>
 
       <h2> How to play</h2>
-      <p> Read the word on the screen and choose the correct color. </p>
+      <p className='infoGame'>
+        {' '}
+        Test your speed: read the word on the screen and tap the correct color
+        to score points before the 30 seconds run out.{' '}
+      </p>
       <ButtonLink
         img='./assets/GuessTheColor/playbutton.png'
         alt='play button'

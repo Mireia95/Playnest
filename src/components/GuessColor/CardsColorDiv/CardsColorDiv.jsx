@@ -1,35 +1,33 @@
-import { useEffect, useState } from 'react';
-import './CardsColorDiv.css';
-import { getRandomColors } from '../../../utils/GuessColor/getRandomColors';
-import { colors } from '../../../utils/GuessColor/colors';
-import CardColor from '../CardColor/CardColor';
+import { useEffect, useState } from 'react'
+import './CardsColorDiv.css'
+import { getRandomColors } from '../../../utils/GuessColor/getRandomColors'
+import { colors } from '../../../utils/GuessColor/colors'
+import CardColor from '../CardColor/CardColor'
+import {
+  compareColors,
+  setRandomColors
+} from '../../../reducer/GuessColor/actions'
 
-const CardsColorDiv = ({ text }) => {
-  const [randomColors, setRandomColors] = useState([]);
-
-  useEffect(() => {
-    const newArray = getRandomColors(colors);
-    setRandomColors(newArray);
-  }, []);
-
-  //! PERSONAL HOOK
-  const compare = (text, randomColor) => {
-    const compare = text === randomColor.text ? true : false;
-    //! si compare is true : suma 10 points
-    //!si is false sigue - o imprime una X o algo
-  };
-
+const CardsColorDiv = ({ dispatch, colorOptions, colorPrint }) => {
+  console.log(colorOptions[0])
   return (
     <div className='cardsColor'>
-      <CardColor
-        ele={randomColors[0]}
-        onClick={() => compare(text, randomColors[0])}
-      />
-      <CardColor ele={randomColors[1]} />
-      <CardColor ele={randomColors[2]} />
-      <CardColor ele={randomColors[3]} />
+      {colorOptions.map((option, i) => (
+        <CardColor
+          key={i}
+          ele={option}
+          onClick={() => {
+            compareColors({
+              colorSelected: option,
+              colorPrint,
+              dispatch
+            })
+            setRandomColors(colors, dispatch)
+          }}
+        />
+      ))}
     </div>
-  );
-};
+  )
+}
 
-export default CardsColorDiv;
+export default CardsColorDiv

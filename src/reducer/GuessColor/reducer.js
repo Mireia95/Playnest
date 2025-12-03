@@ -8,7 +8,7 @@ export const GUESSCOLOR_INITIAL_STATE = {
 
 export const guessColorReducer = (state, action) => {
   switch (action.type) {
-    case 'SUM_POINT':
+    case 'SUM_POINTS':
       return { ...state, points: state.points + 5 }
     case 'SET_COLOR_OPTIONS':
       return { ...state, colorOptions: [...action.payload] }

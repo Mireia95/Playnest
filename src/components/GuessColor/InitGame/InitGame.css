@@ -39,3 +39,9 @@ p {
 #guessColor > .back-game {
   margin-top: 24px;
 }
+
+#guessColor > .infoGame {
+  text-align: center;
+  margin: 0 8px;
+  max-width: 500px;
+}

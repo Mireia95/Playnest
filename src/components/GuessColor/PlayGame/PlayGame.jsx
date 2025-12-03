@@ -22,7 +22,6 @@ const PlayGame = () => {
 
   useEffect(() => {
     setRandomColors(colors, dispatch)
-    console.log(colorPrint)
   }, [])
 
   return (
@@ -32,7 +31,11 @@ const PlayGame = () => {
         <h2 className='points'> points {points}</h2>
       </div>
       <ColorPrompt color={colorPrint} />
-      <CardsColorDiv text={'green'} />
+      <CardsColorDiv
+        dispatch={dispatch}
+        colorOptions={colorOptions}
+        colorPrint={colorPrint}
+      />
       {gameover ? <GameOver points={points} /> : null}
     </>
   )
