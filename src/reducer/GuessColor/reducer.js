@@ -16,6 +16,8 @@ export const guessColorReducer = (state, action) => {
       return { ...state, colorPrint: { ...action.payload } }
     case 'SELECT_COLOR':
       return { ...state, colorSelected: { ...action.payload } }
+    case 'SET_GAMEOVER':
+      return { ...state, gameover: true }
     default:
       return state
   }

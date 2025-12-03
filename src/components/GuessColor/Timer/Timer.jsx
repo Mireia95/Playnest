@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import './Timer.css'
 
-const Timer = () => {
+const Timer = ({ dispatch }) => {
   const [time, setTime] = useState(30)
 
   useEffect(() => {
-    if (time <= 0) return
-    //! if time is 0, update gameover = true
+    if (time <= 0) {
+      dispatch({ type: 'SET_GAMEOVER' })
+      return
+    }
 
     const interval = setInterval(() => {
       setTime(time - 1)

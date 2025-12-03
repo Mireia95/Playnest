@@ -1,7 +1,7 @@
 import ButtonLink from '../ButtonLink/ButtonLink'
 import './GameOver.css'
 
-const GameOver = ({ stars = 3, points = 20 }) => {
+const GameOver = ({ stars = 3, points = 0 }) => {
   const starEmpty = '../assets/GuessTheColor/starEmpty.svg'
   const starFull = '../assets/GuessTheColor/starFull.svg'
   const background = '../assets/GuessTheColor/GameOverBG.svg'

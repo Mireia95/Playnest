@@ -9,6 +9,8 @@ import {
   GUESSCOLOR_INITIAL_STATE,
   guessColorReducer
 } from '../../../reducer/GuessColor/reducer'
+import { setRandomColors } from '../../../reducer/GuessColor/actions'
+import { colors } from '../../../utils/GuessColor/colors'
 
 const PlayGame = () => {
   const [state, dispatch] = useReducer(
@@ -17,21 +19,21 @@ const PlayGame = () => {
   )
 
   const { points, colorPrint, colorOptions, colorSelected, gameover } = state
-  /* 
+
   useEffect(() => {
-     const newArray = getRandomColors(colors);
-    setColorText(newArray.text); 
-  }, []) */
+    setRandomColors(colors, dispatch)
+    console.log(colorPrint)
+  }, [])
 
   return (
     <>
       <div className='infoBar'>
-        <Timer />
-        <h2 className='points'> points </h2>
+        <Timer dispatch={dispatch} />
+        <h2 className='points'> points {points}</h2>
       </div>
-      <ColorPrompt />
+      <ColorPrompt color={colorPrint} />
       <CardsColorDiv text={'green'} />
-      <GameOver />
+      {gameover ? <GameOver points={points} /> : null}
     </>
   )
 }

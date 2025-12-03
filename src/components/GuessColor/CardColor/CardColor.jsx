@@ -1,7 +1,6 @@
-import './CardColor.css';
+import './CardColor.css'
 
 const CardColor = ({ ele, onClick }) => {
-  console.log(ele);
   return (
     <div
       className='cardColor'
@@ -10,7 +9,7 @@ const CardColor = ({ ele, onClick }) => {
     >
       <p style={{ color: ele?.textColor }}> {ele ? ele.text : ''} </p>
     </div>
-  );
-};
+  )
+}
 
-export default CardColor;
+export default CardColor

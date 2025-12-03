@@ -1,9 +1,10 @@
 import './ColorPrompt.css'
 
-const ColorPrompt = () => {
+const ColorPrompt = ({ color }) => {
+  console.log(color)
   return (
     <div className='colorPrompt'>
-      <p>Blue</p>
+      <p style={{ color: color.textColor }}>{color.text}</p>
     </div>
   )
 }
