@@ -1,9 +1,9 @@
-import { getNextCubeColor } from '../../../utils/StackGame/getNextCubeColor';
+import { getNextCubeColor } from '../../../utils/StackGame/getNextCubeColor'
 
 const Box = ({ hueColor, setHueColor }) => {
-  let newHue = getNextCubeColor(hueColor);
+  let newHue = getNextCubeColor(hueColor)
 
-  console.log(newHue);
+  /* console.log(newHue); */
 
   return (
     <>
@@ -12,7 +12,7 @@ const Box = ({ hueColor, setHueColor }) => {
         <meshStandardMaterial color={newHue} />
       </mesh>
     </>
-  );
-};
+  )
+}
 
-export default Box;
+export default Box

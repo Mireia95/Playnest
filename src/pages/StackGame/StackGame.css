@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+
+:root {
+  --SG-font: 'Google Sans Flex', sans-serif;
+  --SG-BGColor: linear-gradient(180deg, #3c8685 0%, #a2d6a6 100%);
+}
+
+.canvas * button,
+.canvas * h1,
+.canvas * h2 {
+  font-family: var(--SG-font);
+}

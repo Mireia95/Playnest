@@ -1,9 +1,24 @@
-#info {
+.stackgame-info {
   text-align: center;
   z-index: 100;
   display: flex;
   flex-direction: column;
   padding: 20px;
   position: absolute;
-  top: 0;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--SG-font);
+  color: white;
+}
+
+.stackgame-info > h2 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.stackgame-info > h4 {
+  font-size: 16px;
+  font-weight: 300;
+  padding: 8px 16px;
 }

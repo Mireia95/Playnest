@@ -4,5 +4,5 @@
   border: 1px solid var(--SG-colorPrimary);
   margin: auto;
   position: relative;
-  background: linear-gradient(180deg, #3c8685 0%, #a2d6a6 100%);
+  background: var(--SG-BGColor);
 }

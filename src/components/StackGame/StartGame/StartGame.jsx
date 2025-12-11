@@ -1,17 +1,18 @@
-import './StartGame.css';
+import { MODES } from '../../../reducer/StackGame/reducer'
+import './StartGame.css'
 
-const StartGame = () => {
+const StartGame = ({ dispatch }) => {
   return (
     <button
       className='start-stack-game'
       onClick={() => {
-        console.log('hola');
+        console.log('hola')
+        dispatch({ type: 'SET_MODE', payload: MODES.move })
       }}
     >
-      {' '}
-      Start{' '}
+      Start
     </button>
-  );
-};
+  )
+}
 
-export default StartGame;
+export default StartGame

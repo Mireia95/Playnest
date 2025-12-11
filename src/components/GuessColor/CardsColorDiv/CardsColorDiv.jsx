@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import './CardsColorDiv.css'
 import { getRandomColors } from '../../../utils/GuessColor/getRandomColors'
 import { colors } from '../../../utils/GuessColor/colors'
@@ -9,7 +8,6 @@ import {
 } from '../../../reducer/GuessColor/actions'
 
 const CardsColorDiv = ({ dispatch, colorOptions, colorPrint }) => {
-  console.log(colorOptions[0])
   return (
     <div className='cardsColor'>
       {colorOptions.map((option, i) => (

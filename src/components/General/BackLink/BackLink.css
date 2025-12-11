@@ -9,8 +9,18 @@
   font-weight: 200;
   color: rgb(255, 255, 255);
   background-color: var(--PN-colorBG);
+  font-family: var(--PN-font);
 }
 
 .back-game > img {
   width: 24px;
+}
+
+.canvas > .back-game {
+  width: fit-content;
+  min-width: 200px;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
 }

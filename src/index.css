@@ -7,7 +7,6 @@
   text-decoration: none;
   box-sizing: border-box;
   border: none;
-  font-family: 'Baloo Bhai 2', sans-serif;
 }
 
 :root {
@@ -16,6 +15,7 @@
   --PN-colorSecondary: #fff8f8;
   --PN-colorSecondaryShadow: #d2d2d2;
   --PN-colorTertiary: linear-gradient(90deg, #ffb1e9 0%, #acd8ff 100%);
+  --PN-font: 'Baloo Bhai 2', sans-serif;
 
   --PN-colorTextPrimary: var(--PN-colorSecondary);
   --PN-colorTextLogo: var(--PN-colorTertiary);
@@ -65,4 +65,10 @@ body,
 butto,
 a {
   cursor: pointer;
+}
+
+main,
+header,
+footer > p {
+  font-family: var(--PN-font);
 }
