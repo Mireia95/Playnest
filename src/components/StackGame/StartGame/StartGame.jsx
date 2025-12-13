@@ -1,13 +1,16 @@
-import { MODES } from '../../../reducer/StackGame/reducer'
+import { createNewBox } from '../../../reducer/StackGame/actions'
 import './StartGame.css'
 
-const StartGame = ({ dispatch }) => {
+const StartGame = ({ dispatch, boxes, hueColorBox }) => {
   return (
     <button
       className='start-stack-game'
       onClick={() => {
-        console.log('hola')
-        dispatch({ type: 'SET_MODE', payload: MODES.move })
+        createNewBox({
+          dispatch: dispatch,
+          boxes: boxes,
+          hueColorBox: hueColorBox
+        })
       }}
     >
       Start
