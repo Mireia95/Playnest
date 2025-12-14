@@ -1,7 +1,7 @@
 import { createNewBox } from '../../../reducer/StackGame/actions'
 import './StartGame.css'
 
-const StartGame = ({ dispatch, boxes, hueColorBox }) => {
+const StartGame = ({ dispatch, boxes, xSpeed, hueColorBox }) => {
   return (
     <button
       className='start-stack-game'
@@ -9,7 +9,8 @@ const StartGame = ({ dispatch, boxes, hueColorBox }) => {
         createNewBox({
           dispatch: dispatch,
           boxes: boxes,
-          hueColorBox: hueColorBox
+          hueColorBox: hueColorBox,
+          xSpeed: xSpeed
         })
       }}
     >

@@ -12,7 +12,7 @@ export const STACKGAME_INITIAL_STATE = {
   mode: MODES.init,
   hueColorBox: (hueColorInit + 20) % 360,
   current: 1,
-  xSpeed: 0.5,
+  xSpeed: 0.02,
   ySpeed: 5, //para los debris
   gameover: false, //! en MODES
   debris: { x: 0, y: 0, width: 0, height: 0, color: 'red' },
@@ -32,6 +32,7 @@ export const stackGameReducer = (state, action) => {
     case 'CREATE_NEW_BOX':
       return {
         ...state,
+        xSpeed: action.payload.xSpeed,
         hueColorBox: action.payload.newHueColor,
         boxes: [...state.boxes, action.payload.newBox]
       }

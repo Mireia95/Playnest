@@ -2,22 +2,29 @@ import { useRef } from 'react'
 import { BOX_HEIGHT } from '../../../utils/StackGame/constants'
 import { useFrame } from '@react-three/fiber'
 
-const Box = ({ box }) => {
+const Box = ({ box, xSpeed }) => {
   //control movements
   const refBox = useRef()
-
-  let xSpeed = 0
+  const direction = useRef(1)
 
   useFrame(() => {
     if (box.moving) {
-      if (refBox.current.position.x < 2) {
-        xSpeed = 1
-        refBox.current.position.x = refBox.current.position.x + 0.5 * xSpeed
-      } else if (refBox.current.position.x > 2) {
-        xSpeed = -1
-        refBox.current.position.x = refBox.current.position.x + 0.5 * xSpeed
-      }
-      console.log(refBox.current.position.x)
+      refBox.current.position.x += xSpeed * direction.current
+
+      const hasCollisionRight = refBox.current.position.x > 2
+      const hasCollisionLeft = refBox.current.position.x < -2
+
+      hasCollisionRight || hasCollisionLeft
+        ? (direction.current = -direction.current)
+        : null
+
+      /*   if (
+        (hasCollisionRight) ||
+        (isMovingLeft)
+      ) {
+        xSpeed = -xSpeed
+      } */
+      //! console.log(refBox.current.position.x)
     }
   })
 

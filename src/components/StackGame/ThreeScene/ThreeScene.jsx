@@ -20,7 +20,7 @@ const ThreeScene = () => {
     STACKGAME_INITIAL_STATE
   )
 
-  const { boxes, mode, hueColorBox } = state
+  const { boxes, mode, hueColorBox, xSpeed } = state
 
   return (
     <div className='canvas'>
@@ -28,7 +28,7 @@ const ThreeScene = () => {
         <ambientLight intensity={0.8} />
         <directionalLight position={[0, 5, 2]} intensity={0.4} />
 
-        <BoxesAll boxes={boxes} />
+        <BoxesAll boxes={boxes} xSpeed={xSpeed} />
       </Canvas>
       {mode === MODES.move ? <h2>HOLA</h2> : null}
       <div className='stackgame-info'>
@@ -36,6 +36,7 @@ const ThreeScene = () => {
         <StartGame
           dispatch={dispatch}
           boxes={boxes}
+          xSpeed={xSpeed}
           hueColorBox={hueColorBox}
         />
       </div>
