@@ -1,26 +1,29 @@
-import { useReducer } from 'react'
-import './ThreeScene.css'
-import StartGame from '../StartGame/StartGame'
-import { Canvas } from '@react-three/fiber'
+import { useEffect, useReducer } from 'react';
+import './ThreeScene.css';
+import StartGame from '../StartGame/StartGame';
+import { Canvas } from '@react-three/fiber';
 
-import BackLink from '../../General/BackLink/BackLink'
-import Info from '../Info/Info'
+import BackLink from '../../General/BackLink/BackLink';
+import Info from '../Info/Info';
 import {
   STACKGAME_INITIAL_STATE,
   stackGameReducer
-} from '../../../reducer/StackGame/reducer'
-import GameOver from '../GameOver/GameOver'
-import BoxesAll from '../BoxesAll/BoxesAll'
-import { MODES } from '../../../utils/StackGame/constants'
+} from '../../../reducer/StackGame/reducer';
+import GameOver from '../GameOver/GameOver';
+import BoxesAll from '../BoxesAll/BoxesAll';
+import Level from '../Level/Level';
+import { useCamaraControl } from '../../../hooks/StackGame/useCamaraControl';
 
 const ThreeScene = () => {
   //useReducer
   const [state, dispatch] = useReducer(
     stackGameReducer,
     STACKGAME_INITIAL_STATE
-  )
+  );
+  const { boxes, mode, hueColorBox, xSpeed, level } = state;
 
-  const { boxes, mode, hueColorBox, xSpeed } = state
+  //customHook para movimiento de cámara
+  useCamaraControl({ mode, boxes, hueColorBox, xSpeed, dispatch });
 
   return (
     <div className='canvas'>
@@ -30,21 +33,22 @@ const ThreeScene = () => {
 
         <BoxesAll boxes={boxes} xSpeed={xSpeed} />
       </Canvas>
-      {mode === MODES.move ? <h2>HOLA</h2> : null}
       <div className='stackgame-info'>
-        <Info />
+        <Info mode={mode} />
+        <Level mode={mode} level={level} />
         <StartGame
           dispatch={dispatch}
           boxes={boxes}
           xSpeed={xSpeed}
           hueColorBox={hueColorBox}
+          mode={mode}
         />
       </div>
 
       <BackLink />
-      {mode.gameover ? <GameOver /> : null}
+      {mode === 'gameover' ? <GameOver /> : null}
     </div>
-  )
-}
+  );
+};
 
-export default ThreeScene
+export default ThreeScene;

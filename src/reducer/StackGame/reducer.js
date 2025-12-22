@@ -1,4 +1,4 @@
-import { hueColorInit, MODES } from '../../utils/StackGame/constants'
+import { hueColorInit, MODES } from '../../utils/StackGame/constants';
 
 export const STACKGAME_INITIAL_STATE = {
   boxes: [
@@ -10,31 +10,29 @@ export const STACKGAME_INITIAL_STATE = {
     }
   ], //array con los cubos
   mode: MODES.init,
+  level: 0,
   hueColorBox: (hueColorInit + 20) % 360,
-  current: 1,
+  current: 1, //!
   xSpeed: 0.02,
-  ySpeed: 5, //para los debris
-  gameover: false, //! en MODES
   debris: { x: 0, y: 0, width: 0, height: 0, color: 'red' },
   scrollCounter: 0, //!
   cameraY: 0 //!
-}
+};
 
 export const stackGameReducer = (state, action) => {
   switch (action.type) {
-    /*    case 'INIT': 
-      return { ...state, boxes: action.payload } */
-    /*    case 'SET_MODE': 
-      return { ...state, mode: action.payload } */
-    /*  case 'UPDATE_BOXES': //!
-      return { ...state, boxes: action.payload } */
-
+    case 'START_GAME':
+      return {
+        ...state,
+        mode: MODES.move
+      };
     case 'CREATE_NEW_BOX':
       return {
         ...state,
+        level: state.level + 1,
         xSpeed: action.payload.xSpeed,
         hueColorBox: action.payload.newHueColor,
         boxes: [...state.boxes, action.payload.newBox]
-      }
+      };
   }
-}
+};
