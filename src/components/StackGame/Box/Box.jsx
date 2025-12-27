@@ -10,7 +10,7 @@ const Box = ({ box, xSpeed }) => {
   useFrame(() => {
     //si el box tiene moving=true, estamos controlando el último box creado (se tiene que mover)
     if (box.moving) {
-      refBox.current.position.x += xSpeed * direction.current;
+      refBox.current.position.x += xSpeed * direction.current; //se mueve dependiedo del speed
 
       const hasCollisionRight = refBox.current.position.x > 2;
       const hasCollisionLeft = refBox.current.position.x < -2;
@@ -22,8 +22,8 @@ const Box = ({ box, xSpeed }) => {
   });
 
   return (
-    <mesh key={box.id} ref={refBox} position={[0, box.posY, 0]}>
-      <boxGeometry args={[2, BOX_HEIGHT, 2]} />
+    <mesh key={box.id} ref={refBox} position={[box.posX, box.posY, 0]}>
+      <boxGeometry args={[box.width, BOX_HEIGHT, 2]} />
       <meshStandardMaterial color={box.color} />
     </mesh>
   );

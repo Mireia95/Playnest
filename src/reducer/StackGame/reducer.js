@@ -6,6 +6,8 @@ export const STACKGAME_INITIAL_STATE = {
       id: 0,
       moving: false,
       color: `hsl(${hueColorInit}, 70%, 80%)`,
+      width: 2,
+      posX: 0,
       posY: -2 //el primero irà mas abajo para verlo mejor en el canvas. El siguiente serà posY + BOX_HEIGHT
     }
   ], //array con los cubos
@@ -26,10 +28,12 @@ export const stackGameReducer = (state, action) => {
         ...state,
         mode: MODES.move
       };
+    case 'NEXT_LEVEL':
+      return { ...state, level: state.level + 1 };
     case 'CREATE_NEW_BOX':
       return {
         ...state,
-        level: state.level + 1,
+        //!level: state.level + 1,
         xSpeed: action.payload.xSpeed,
         hueColorBox: action.payload.newHueColor,
         boxes: [...state.boxes, action.payload.newBox]

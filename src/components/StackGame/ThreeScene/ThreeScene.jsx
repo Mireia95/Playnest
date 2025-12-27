@@ -12,7 +12,7 @@ import {
 import GameOver from '../GameOver/GameOver';
 import BoxesAll from '../BoxesAll/BoxesAll';
 import Level from '../Level/Level';
-import { useCamaraControl } from '../../../hooks/StackGame/useCamaraControl';
+import { useEventControl } from '../../../hooks/StackGame/useEventControl';
 
 const ThreeScene = () => {
   //useReducer
@@ -23,7 +23,7 @@ const ThreeScene = () => {
   const { boxes, mode, hueColorBox, xSpeed, level } = state;
 
   //customHook para movimiento de cámara
-  useCamaraControl({ mode, boxes, hueColorBox, xSpeed, dispatch });
+  useEventControl({ mode, boxes, hueColorBox, xSpeed, dispatch });
 
   return (
     <div className='canvas'>

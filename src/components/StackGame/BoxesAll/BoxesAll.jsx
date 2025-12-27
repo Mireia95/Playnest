@@ -1,8 +1,7 @@
 import Box from '../Box/Box';
 import './BoxesAll.css';
 
-const BoxesAll = ({ dispatch, boxes, xSpeed }) => {
-  //!eliminare dispatch se non lo uso
+const BoxesAll = ({ boxes, xSpeed }) => {
   return (
     <>
       {boxes.map((box) => {
