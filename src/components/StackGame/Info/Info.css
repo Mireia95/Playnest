@@ -8,3 +8,16 @@
   font-weight: 300;
   padding: 8px 16px;
 }
+
+@media (max-width: 450px) {
+  .stackgame-title > h2 {
+    font-size: 38px;
+    font-weight: 700;
+  }
+
+  .stackgame-title > h4 {
+    font-size: 14px;
+    font-weight: 300;
+    padding: 8px 16px;
+  }
+}

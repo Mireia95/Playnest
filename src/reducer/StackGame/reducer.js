@@ -1,4 +1,8 @@
-import { hueColorInit, MODES } from '../../utils/StackGame/constants';
+import {
+  BOX_HEIGHT,
+  hueColorInit,
+  MODES
+} from '../../utils/StackGame/constants';
 
 export const STACKGAME_INITIAL_STATE = {
   boxes: [
@@ -18,7 +22,7 @@ export const STACKGAME_INITIAL_STATE = {
   xSpeed: 0.02,
   debris: { x: 0, y: 0, width: 0, height: 0, color: 'red' },
   scrollCounter: 0, //!
-  cameraY: 0 //!
+  cameraY: 4
 };
 
 export const stackGameReducer = (state, action) => {
@@ -29,11 +33,14 @@ export const stackGameReducer = (state, action) => {
         mode: MODES.move
       };
     case 'NEXT_LEVEL':
-      return { ...state, level: state.level + 1 };
+      return {
+        ...state,
+        level: state.level + 1
+      };
     case 'CREATE_NEW_BOX':
       return {
         ...state,
-        //!level: state.level + 1,
+        cameraY: state.cameraY + BOX_HEIGHT,
         xSpeed: action.payload.xSpeed,
         hueColorBox: action.payload.newHueColor,
         boxes: [...state.boxes, action.payload.newBox]
