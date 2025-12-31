@@ -29,8 +29,8 @@ const Home = () => {
             alt='quiz time'
           />
           <CardGame
-            link='/stackgame'
-            img='./assets/StackGame.png'
+            link='/memorygame'
+            img='./assets/MemoryGameCard.png'
             alt='stackgame'
           />
         </section>

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  --MG-font-title: 'Modak', system-ui;
+  --MG-font-01: 'Mitr', sans-serif;
+  --MG-BGColor: linear-gradient(180deg, #538f87 0%, #9ec99c 100%);
+  --MG-color-01: #faf4e5;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#memorygame {
+  height: 100svh;
+  background: var(--MG-BGColor);
+  flex-direction: column;
+}
+
+#memorygame > .startButt {
+  padding: 8px 16px;
+  border: 1px solid var(--MG-color-01);
+  color: var(--MG-color-01);
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+}

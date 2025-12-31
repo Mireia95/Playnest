@@ -1,0 +1,12 @@
+#memorygame > .title {
+  width: 80%;
+  max-width: 350px;
+}
+#memorygame > h3 {
+  color: var(--MG-color-01);
+  font-family: var(--MG-font-01);
+  font-weight: 300;
+  text-align: center;
+  font-size: 14px;
+  margin: 24px;
+}

@@ -8,8 +8,8 @@
   width: 100%;
 }
 
-h2,
-p {
+#guessColor > h2,
+#guessColor > p {
   font-family: var(--GC-font-02);
   font-weight: 400;
 }

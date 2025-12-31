@@ -2,10 +2,10 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home/Home';
 import PokemonHome from './pages/Pokemon/PokemonHome/PokemonHome';
-import StackGame from './pages/StackGame/StackGame';
 import GuessColor from './pages/GuessColor/GuessColor';
 import PlayGame from './components/GuessColor/PlayGame/PlayGame';
 import GuessColorBG from './components/GuessColor/GuessColorBG/GuessColorBG';
+import MemoryGame from './pages/MemoryGame/MemoryGame';
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
           <Route index element={<GuessColor />} />
           <Route path='play' element={<PlayGame />} />
         </Route>
-        <Route path='/stackgame' element={<StackGame />} />
+        <Route path='/memorygame' element={<MemoryGame />} />
       </Routes>
     </>
   );
