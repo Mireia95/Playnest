@@ -1,34 +1,17 @@
-import { useReducer } from 'react';
-import InitGame from '../../components/MemoryGame/InitGame/InitGame';
-import './MemoryGame.css';
-import {
-  MEMORYGAME_INITIAL_STATE,
-  memoryGameReducer
-} from '../../reducer/MemoryGame/reducer';
+import { Link } from 'react-router-dom'
+import InitGame from '../../components/MemoryGame/InitGame/InitGame'
+import './MemoryGame.css'
 
 const MemoryGame = () => {
-  const [state, dispatch] = useReducer(
-    memoryGameReducer,
-    MEMORYGAME_INITIAL_STATE
-  );
-  const { mode } = state;
-
   return (
-    <div id='memorygame' className='flex'>
-      {mode === 'init' ? (
-        <>
-          <InitGame />
-          <button
-            className='startButt'
-            onClick={() => dispatch({ type: 'SET_PLAY' })}
-          >
-            START
-          </button>
-        </>
-      ) : null}
-      {mode === 'play' ? <h3> giochiamo</h3> : null}
-    </div>
-  );
-};
+    <>
+      <InitGame />
+      <Link className={'startButt'} to={'/memorygame/play'}>
+        {' '}
+        START{' '}
+      </Link>
+    </>
+  )
+}
 
-export default MemoryGame;
+export default MemoryGame

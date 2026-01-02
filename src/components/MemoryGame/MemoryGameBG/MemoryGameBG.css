@@ -1,0 +1,15 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#memorygame {
+  height: 100svh;
+  background: var(--MG-BGColor);
+  flex-direction: column;
+}
+
+#memorygame > * {
+  font-family: var(--MG-font-01);
+}

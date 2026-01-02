@@ -9,18 +9,6 @@
   --MG-color-01: #faf4e5;
 }
 
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#memorygame {
-  height: 100svh;
-  background: var(--MG-BGColor);
-  flex-direction: column;
-}
-
 #memorygame > .startButt {
   padding: 8px 16px;
   border: 1px solid var(--MG-color-01);
