@@ -9,7 +9,7 @@ main {
   width: 100%;
   max-width: 800px;
   justify-content: space-evenly;
-  gap: 40px;
+  gap: var(--PN-gap-xl);
   flex-wrap: wrap;
   margin-bottom: var(--PN-margin-s);
 }
@@ -17,12 +17,12 @@ main {
 .title {
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 32px;
+  margin-bottom: var(--PN-margin-l);
 }
 
 .title > div {
   justify-content: center;
-  gap: 24px;
+  gap: var(--PN-gap-m);
   height: 80px;
 }
 

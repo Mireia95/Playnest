@@ -1,0 +1,20 @@
+.moves {
+  color: white;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.cards {
+  width: 90%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columnas iguales */
+  grid-template-rows: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .cards {
+    gap: 8px;
+  }
+}

@@ -1,33 +1,37 @@
-import { useReducer } from 'react'
-import CardsColorDiv from '../CardsColorDiv/CardsColorDiv'
-import './PlayGame.css'
-import { useEffect } from 'react'
-import GameOver from '../GameOver/GameOver'
-import Timer from '../Timer/Timer'
-import ColorPrompt from '../ColorPrompt/ColorPrompt'
+import { useReducer } from 'react';
+import CardsColorDiv from '../CardsColorDiv/CardsColorDiv';
+import './PlayGame.css';
+import { useEffect } from 'react';
+import GameOver from '../GameOver/GameOver';
+import Timer from '../Timer/Timer';
+import ColorPrompt from '../ColorPrompt/ColorPrompt';
 import {
   GUESSCOLOR_INITIAL_STATE,
   guessColorReducer
-} from '../../../reducer/GuessColor/reducer'
-import { setRandomColors } from '../../../reducer/GuessColor/actions'
-import { colors } from '../../../utils/GuessColor/colors'
+} from '../../../reducer/GuessColor/reducer';
+import { setRandomColors } from '../../../reducer/GuessColor/actions';
+import { colors } from '../../../utils/GuessColor/colors';
+import useMoves from '../../../hooks/useMoves';
 
 const PlayGame = () => {
   const [state, dispatch] = useReducer(
     guessColorReducer,
     GUESSCOLOR_INITIAL_STATE
-  )
+  );
 
-  const { points, colorPrint, colorOptions, colorSelected, gameover } = state
+  const { points, colorPrint, colorOptions, gameover } = state;
+
+  const { moves, increaseMoves } = useMoves();
 
   useEffect(() => {
-    setRandomColors(colors, dispatch)
-  }, [])
+    setRandomColors(colors, dispatch);
+  }, []);
 
   return (
     <>
       <div className='infoBar'>
         <Timer dispatch={dispatch} />
+        <h2> moves {moves} </h2>
         <h2 className='points'> points {points}</h2>
       </div>
       <ColorPrompt color={colorPrint} />
@@ -35,10 +39,13 @@ const PlayGame = () => {
         dispatch={dispatch}
         colorOptions={colorOptions}
         colorPrint={colorPrint}
+        increaseMoves={() => {
+          increaseMoves();
+        }}
       />
       {gameover ? <GameOver points={points} /> : null}
     </>
-  )
-}
+  );
+};
 
-export default PlayGame
+export default PlayGame;

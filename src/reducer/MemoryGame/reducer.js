@@ -1,14 +1,15 @@
 import { MODE } from '../../utils/MemoryGame/constants';
 
 export const MEMORYGAME_INITIAL_STATE = {
+  cards: [],
   moves: 0,
-  mode: MODE.init
+  mode: MODE.play
 };
 
 export const memoryGameReducer = (state, action) => {
   switch (action.type) {
-    case 'SET_PLAY':
-      return { ...state, mode: MODE.play };
+    case 'SET_CARDS':
+      return { ...state, cards: [...action.payload] };
 
     /*  case 'SUM_POINTS':
       return { ...state, points: state.points + 5 };

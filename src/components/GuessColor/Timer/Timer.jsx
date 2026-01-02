@@ -1,26 +1,19 @@
-import { useEffect, useState } from 'react'
-import './Timer.css'
+import { useEffect, useState } from 'react';
+import './Timer.css';
+import useTimer from '../../../hooks/useTimer';
 
 const Timer = ({ dispatch }) => {
-  const [time, setTime] = useState(30)
-
-  useEffect(() => {
-    if (time <= 0) {
-      dispatch({ type: 'SET_GAMEOVER' })
-      return
+  const { time } = useTimer({
+    gameOverFunction: () => {
+      dispatch({ type: 'SET_GAMEOVER' });
     }
-
-    const interval = setInterval(() => {
-      setTime(time - 1)
-    }, 1000)
-    return () => clearInterval(interval)
-  }, [time])
+  });
 
   return (
     <div className='timer'>
       <p>Time: {time} sec</p>
     </div>
-  )
-}
+  );
+};
 
-export default Timer
+export default Timer;
