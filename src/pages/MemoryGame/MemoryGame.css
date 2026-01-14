@@ -7,6 +7,7 @@
   --MG-font-01: 'Mitr', sans-serif;
   --MG-BGColor: linear-gradient(180deg, #538f87 0%, #9ec99c 100%);
   --MG-color-01: #faf4e5;
+  --MG-color-02: #223572;
 }
 
 #memorygame > .startButt {
@@ -14,6 +15,6 @@
   border: 1px solid var(--MG-color-01);
   color: var(--MG-color-01);
   border-radius: 8px;
-  background-color: transparent;
+  background-color: var(--MG-color-02);
   cursor: pointer;
 }

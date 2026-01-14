@@ -1,31 +1,32 @@
-import { useReducer } from 'react';
-import CardsColorDiv from '../CardsColorDiv/CardsColorDiv';
-import './PlayGame.css';
-import { useEffect } from 'react';
-import GameOver from '../GameOver/GameOver';
-import Timer from '../Timer/Timer';
-import ColorPrompt from '../ColorPrompt/ColorPrompt';
+import { useReducer } from 'react'
+import CardsColorDiv from '../CardsColorDiv/CardsColorDiv'
+import './PlayGame.css'
+import { useEffect } from 'react'
+
+import Timer from '../Timer/Timer'
+import ColorPrompt from '../ColorPrompt/ColorPrompt'
 import {
   GUESSCOLOR_INITIAL_STATE,
   guessColorReducer
-} from '../../../reducer/GuessColor/reducer';
-import { setRandomColors } from '../../../reducer/GuessColor/actions';
-import { colors } from '../../../utils/GuessColor/colors';
-import useMoves from '../../../hooks/useMoves';
+} from '../../../reducer/GuessColor/reducer'
+import { setRandomColors } from '../../../reducer/GuessColor/actions'
+import { colors } from '../../../utils/GuessColor/colors'
+import useMoves from '../../../hooks/useMoves'
+import GameOver from '../../General/GameOver/GameOver'
 
 const PlayGame = () => {
   const [state, dispatch] = useReducer(
     guessColorReducer,
     GUESSCOLOR_INITIAL_STATE
-  );
+  )
 
-  const { points, colorPrint, colorOptions, gameover } = state;
+  const { points, colorPrint, colorOptions, gameover } = state
 
-  const { moves, increaseMoves } = useMoves();
+  const { moves, increaseMoves } = useMoves()
 
   useEffect(() => {
-    setRandomColors(colors, dispatch);
-  }, []);
+    setRandomColors(colors, dispatch)
+  }, [])
 
   return (
     <>
@@ -40,12 +41,18 @@ const PlayGame = () => {
         colorOptions={colorOptions}
         colorPrint={colorPrint}
         increaseMoves={() => {
-          increaseMoves();
+          increaseMoves()
         }}
       />
-      {gameover ? <GameOver points={points} /> : null}
+      {gameover ? (
+        <GameOver
+          points={points}
+          path={'/guesscolor/play'}
+          homePath={'/guesscolor'}
+        />
+      ) : null}
     </>
-  );
-};
+  )
+}
 
-export default PlayGame;
+export default PlayGame

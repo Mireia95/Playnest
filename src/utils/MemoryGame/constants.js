@@ -2,5 +2,6 @@ export const MODE = {
   init: 'init',
   play: 'play',
   compare: 'compare',
-  gameover: 'gameover'
-};
+  gameover: 'gameover',
+  win: 'win'
+}
