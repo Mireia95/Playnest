@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+/* import { Link } from 'react-router-dom'
 import './ButtonLink.css'
 
 const ButtonLink = ({ img, alt = '', text = '', path, className, onClick }) => {
@@ -11,3 +11,4 @@ const ButtonLink = ({ img, alt = '', text = '', path, className, onClick }) => {
 }
 
 export default ButtonLink
+ */

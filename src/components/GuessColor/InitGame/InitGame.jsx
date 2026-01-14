@@ -1,5 +1,6 @@
 import BackLink from '../../General/BackLink/BackLink'
-import ButtonLink from '../ButtonLink/ButtonLink'
+import ButtonLink from '../../General/ButtonLink/ButtonLink'
+
 import './InitGame.css'
 
 const InitGame = () => {
