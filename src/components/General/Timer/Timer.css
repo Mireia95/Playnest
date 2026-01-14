@@ -1,0 +1,9 @@
+.timer {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.timer > img {
+  width: 32px;
+}

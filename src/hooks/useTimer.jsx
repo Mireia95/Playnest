@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-const useTimer = ({ gameOverFunction = () => {} }) => {
-  const [time, setTime] = useState(30);
+const useTimer = ({ gameOverFunction = () => {}, initTime }) => {
+  const [time, setTime] = useState(initTime);
 
   useEffect(() => {
     if (time <= 0) {

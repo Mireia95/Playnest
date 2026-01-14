@@ -1,4 +1,4 @@
-import './InitGame.css'
+import './InitGame.css';
 
 const InitGame = () => {
   return (
@@ -6,10 +6,10 @@ const InitGame = () => {
       <img className='title' src='./assets/MemoryGame/MemoryGameTitle.png' />
       <h3>
         Flip the cards and find all matching pairs using the fewest moves
-        possible. You only have 20 moves available, so use them wisely!
+        possible. You only have 60 seconds available, so harry up!
       </h3>
     </>
-  )
-}
+  );
+};
 
-export default InitGame
+export default InitGame;

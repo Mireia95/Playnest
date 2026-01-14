@@ -1,37 +1,33 @@
-import { useEffect, useReducer } from 'react'
-import './PlayMemory.css'
-import { shuffleCards } from '../../../reducer/MemoryGame/actions'
+import { useEffect, useReducer } from 'react';
+import './PlayMemory.css';
+import {
+  setFlippedCard,
+  shuffleCards
+} from '../../../reducer/MemoryGame/actions';
 import {
   MEMORYGAME_INITIAL_STATE,
   memoryGameReducer
-} from '../../../reducer/MemoryGame/reducer'
-import Card from '../Card/Card'
-import useMoves from '../../../hooks/useMoves'
-import GameOver from '../../General/GameOver/GameOver'
+} from '../../../reducer/MemoryGame/reducer';
+import Card from '../Card/Card';
+
+import GameOver from '../../General/GameOver/GameOver';
+import Timer from '../../General/Timer/Timer';
 
 const PlayMemory = () => {
   const [state, dispatch] = useReducer(
     memoryGameReducer,
     MEMORYGAME_INITIAL_STATE
-  )
+  );
 
-  const { cards, cardsFlipped, cardsMatched, mode } = state
-
-  //moves
-  const { moves, increaseMoves } = useMoves()
+  const { cards, cardsFlipped, cardsMatched, mode } = state;
 
   useEffect(() => {
-    shuffleCards(dispatch)
-  }, [])
-
-  useEffect(() => {
-    if (moves === 20) {
-      dispatch({ type: 'SET_GAMEOVER' })
-    }
-  }, [moves])
+    shuffleCards(dispatch);
+  }, []);
 
   {
-    console.log('soy playmemory y me renderizo')
+    console.log('soy playmemory y me renderizo');
+    console.log(cardsFlipped);
   }
   return (
     <>
@@ -42,14 +38,25 @@ const PlayMemory = () => {
           homePath={'/memorygame'}
         />
       ) : null}
-      <h2 className='moves'> moves {moves}</h2>
+
+      <Timer
+        gameOverFunction={() => dispatch({ type: 'SET_GAMEOVER' })}
+        initTime={60}
+      />
       <div className='cards'>
         {cards.map((card, index) => (
-          <Card key={index} card={card} increaseMoves={increaseMoves} />
+          <Card
+            key={index}
+            card={card}
+            onClick={
+              () => setFlippedCard({ dispatch, cardsFlipped, card })
+              // dispatch({ type: 'SET_CARD_FLIPPED', payload: card })
+            }
+          />
         ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default PlayMemory
+export default PlayMemory;

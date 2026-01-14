@@ -17,3 +17,21 @@ export const shuffleCards = (dispatch) => {
 
   dispatch({ type: 'SET_CARDS', payload: cardsForGame });
 };
+
+export const compareCards = (cards) => {
+  //!compara las dos cartas que hay dentro del array flippedCard
+  cards[0].alt === cards[1].alt
+    ? console.log('cuadran!')
+    : console.log('NO CUADRAN');
+};
+
+export const setFlippedCard = ({ dispatch, cardsFlipped, card }) => {
+  if (cardsFlipped.length < 2) {
+    dispatch({ type: 'SET_FLIPPED_CARD', payload: card });
+  }
+
+  if (cardsFlipped.length === 2) {
+    compareCards(cardsFlipped);
+    dispatch({ type: 'CLEAN_FLIPPED_CARD' });
+  }
+};

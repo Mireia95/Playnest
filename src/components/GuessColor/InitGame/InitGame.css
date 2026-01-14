@@ -14,28 +14,6 @@
   font-weight: 400;
 }
 
-.playButton > img {
-  width: 96px;
-  height: 96px;
-}
-
-.imageBGcolors {
-  position: absolute;
-  bottom: 10%;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.imageBGcolors > img {
-  display: block;
-  object-fit: contain;
-}
-
 #guessColor > .back-game {
   margin-top: 24px;
 }
@@ -44,4 +22,9 @@
   text-align: center;
   margin: 0 8px;
   max-width: 500px;
+  color: var(--GC-color-text);
+}
+
+.playButton > img {
+  width: 60px;
 }

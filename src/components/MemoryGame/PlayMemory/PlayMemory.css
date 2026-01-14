@@ -13,6 +13,11 @@
   gap: 16px;
 }
 
+#memorygame > .timer {
+  color: var(--MG-color-01);
+  margin-bottom: 40px;
+}
+
 @media (max-width: 600px) {
   .cards {
     gap: 8px;

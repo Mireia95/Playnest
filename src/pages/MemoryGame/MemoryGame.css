@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
 :root {
   --MG-font-title: 'Modak', system-ui;
-  --MG-font-01: 'Mitr', sans-serif;
+  --MG-font-01: 'Hammersmith One', sans-serif;
   --MG-BGColor: linear-gradient(180deg, #538f87 0%, #9ec99c 100%);
   --MG-color-01: #faf4e5;
   --MG-color-02: #223572;

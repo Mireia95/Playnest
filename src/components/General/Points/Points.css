@@ -1,0 +1,8 @@
+#guessColor .points {
+  display: flex;
+  align-items: center;
+}
+
+#guessColor .points > img {
+  width: 32px;
+}

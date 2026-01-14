@@ -2,10 +2,14 @@
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  color: var(--GC-color-text);
 }
 
 #guessColor .infoBar > .points {
-  font-family: 'Baloo Bhai 2', sans-serif;
   font-size: 24px;
   font-weight: 500;
+}
+
+h2.moves {
+  color: var(--GC-color-text);
 }

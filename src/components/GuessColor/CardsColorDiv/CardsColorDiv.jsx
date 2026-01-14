@@ -7,12 +7,7 @@ import {
   setRandomColors
 } from '../../../reducer/GuessColor/actions';
 
-const CardsColorDiv = ({
-  dispatch,
-  colorOptions,
-  colorPrint,
-  increaseMoves = () => {}
-}) => {
+const CardsColorDiv = ({ dispatch, colorOptions, colorPrint }) => {
   return (
     <div className='cardsColor'>
       {colorOptions.map((option, i) => (
@@ -25,7 +20,6 @@ const CardsColorDiv = ({
               colorPrint,
               dispatch
             });
-            increaseMoves();
             setRandomColors(colors, dispatch);
           }}
         />
