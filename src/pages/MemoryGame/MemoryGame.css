@@ -10,11 +10,9 @@
   --MG-color-02: #223572;
 }
 
-#memorygame > .startButt {
-  padding: 8px 16px;
+#memorygame > .playButton {
   border: 1px solid var(--MG-color-01);
-  color: var(--MG-color-01);
-  border-radius: 8px;
-  background-color: var(--MG-color-02);
-  cursor: pointer;
+  color: var(--MG-color-02);
+  background-color: var(--MG-color-01);
+  margin-bottom: 32px;
 }
