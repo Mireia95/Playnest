@@ -9,7 +9,7 @@
   max-width: 900px;
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 columnas iguales */
-  grid-template-rows: repeat(4, 1fr);
+  /*   grid-template-rows: repeat(4, 1fr); */
   gap: 16px;
 }
 

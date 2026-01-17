@@ -1,13 +1,12 @@
-import './BackLink.css';
-import { Link } from 'react-router-dom';
+import './BackLink.css'
+import { Link } from 'react-router-dom'
 
 const BackLink = () => {
   return (
     <Link to='/' className='back-game'>
       <img src='./assets/home.svg' alt='back to game menu' />
-      Back to game menu
     </Link>
-  );
-};
+  )
+}
 
-export default BackLink;
+export default BackLink

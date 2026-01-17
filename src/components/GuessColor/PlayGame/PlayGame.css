@@ -1,5 +1,6 @@
 #guessColor .infoBar {
   width: 100%;
+  margin: 24px 16px;
   display: flex;
   justify-content: space-evenly;
   color: var(--GC-color-text);

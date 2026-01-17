@@ -1,8 +1,33 @@
 .card {
+  aspect-ratio: 1 / 1;
   cursor: pointer;
   user-select: none;
-  /*   position: absolute; */
   backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.card-div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; /* para que pueda dar la vuelta */
+  transition: transform 1s;
+  /*   transform: rotateY(180deg); */
+}
+
+.back-card,
+.front-card {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card.turned > .card-div {
+  user-select: none; /* no se puede volver a seleccionar */
+  transform: rotateY(180deg);
+}
+
+.back-card {
+  transform: rotateY(180deg);
 }
 
 .back-card > img,

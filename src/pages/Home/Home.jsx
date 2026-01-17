@@ -1,9 +1,9 @@
-import Lottie from 'lottie-react';
-import ControllerPlay from '../../../public/assets/ControllerPlay.json';
-import CardGame from '../../components/Home/CardGame/CardGame';
-import Footer from '../../components/Home/Footer/Footer';
-import Header from '../../components/Home/Header/Header';
-import './Home.css';
+import Lottie from 'lottie-react'
+import ControllerPlay from '../../../public/assets/ControllerPlay.json'
+import CardGame from '../../components/Home/CardGame/CardGame'
+import Footer from '../../components/Home/Footer/Footer'
+import Header from '../../components/Home/Header/Header'
+import './Home.css'
 
 const Home = () => {
   return (
@@ -25,7 +25,7 @@ const Home = () => {
           />
           <CardGame
             link='/guesscolor'
-            img='./assets/GuessTheColor.png'
+            img='./assets/GuessTheColorCard.svg'
             alt='quiz time'
           />
           <CardGame
@@ -37,7 +37,7 @@ const Home = () => {
       </main>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
