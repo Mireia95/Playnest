@@ -1,7 +1,12 @@
 import { cards } from '../../utils/MemoryGame/cards'
 
 export const shuffleCards = (dispatch) => {
-  const duplicateCards = [...cards, ...cards]
+  const duplicateCards = []
+
+  for (let i = 0; i < cards.length; i++) {
+    duplicateCards.push({ ...cards[i] })
+    duplicateCards.push({ ...cards[i] })
+  }
 
   //array para shuffle
   let cardsForGame = [...duplicateCards]
@@ -15,13 +20,15 @@ export const shuffleCards = (dispatch) => {
     cardsForGame[randomPos] = savedPos
   }
 
+  for (let i = 0; i < cardsForGame.length; i++) {
+    cardsForGame[i].id = i
+  }
+
   dispatch({ type: 'SET_CARDS', payload: cardsForGame })
 }
 
 export const compareCards = (cardFlipped, card) => {
-  //!compara las dos cartas que hay dentro del array flippedCard
   const matched = cardFlipped[0].alt === card.alt ? true : false
-
   return matched
 }
 
