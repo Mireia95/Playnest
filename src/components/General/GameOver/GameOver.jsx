@@ -1,10 +1,10 @@
+import BackLink from '../BackLink/BackLink'
 import ButtonLink from '../ButtonLink/ButtonLink'
 import './GameOver.css'
 
 const GameOver = ({ points = 0, general = false, path, homePath }) => {
   const starEmpty = '../assets/GuessTheColor/starEmpty.svg'
   const starFull = '../assets/GuessTheColor/starFull.svg'
-  const background = '../assets/GuessTheColor/GameOverBG.svg'
 
   return (
     <>
@@ -22,8 +22,6 @@ const GameOver = ({ points = 0, general = false, path, homePath }) => {
               <h3> {points} points </h3>
             </>
           ) : null}
-
-          <img className='gameoverBG' src={background} alt='background' />
         </div>
         <ButtonLink
           img='../assets/GuessTheColor/refreshIcon.svg'
@@ -33,13 +31,14 @@ const GameOver = ({ points = 0, general = false, path, homePath }) => {
           className='playButton'
           onClick={() => window.location.reload()}
         ></ButtonLink>
-        <ButtonLink
+        {/*  <ButtonLink
           img='../assets/GuessTheColor/playbutton.png'
           alt='home'
           text='Back to home'
           path={homePath}
           className='playButton'
-        ></ButtonLink>
+        ></ButtonLink> */}
+        <BackLink />
       </div>
     </>
   )

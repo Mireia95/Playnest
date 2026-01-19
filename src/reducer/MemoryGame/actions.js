@@ -33,14 +33,15 @@ export const compareCards = (cardFlipped, card) => {
 }
 
 export const setFlippedCard = ({ dispatch, cardsFlipped, card }) => {
-  if (cardsFlipped.length === 0) {
+  if (cardsFlipped.length < 2) {
     dispatch({ type: 'SET_FLIPPED_CARD', payload: card })
   }
+  console.log(cardsFlipped.length)
 
-  if (cardsFlipped.length === 1) {
+  /* if (cardsFlipped.length === 1) {
     let matched = compareCards(cardsFlipped, card)
     matched
       ? dispatch({ type: 'SET_MATCHED_CARD', payload: card })
       : dispatch({ type: 'CLEAN_FLIPPED_CARD' })
-  }
+  } */
 }

@@ -25,7 +25,7 @@ export const memoryGameReducer = (state, action) => {
     case 'SET_MATCHED_CARD':
       return {
         ...state,
-        cardsMatched: [...state.cardsMatched, action.payload],
+        cardsMatched: [...state.cardsMatched, ...action.payload],
         cardsFlipped: []
       }
 

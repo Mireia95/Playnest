@@ -25,10 +25,27 @@ const PlayMemory = () => {
     shuffleCards(dispatch)
   }, [])
 
+  //compare cards
+  useEffect(() => {
+    if (cardsFlipped.length === 2) {
+      let matched = cardsFlipped[0].alt === cardsFlipped[1].alt ? true : false
+
+      console.log(matched)
+      const timer = setTimeout(() => {
+        matched
+          ? dispatch({
+              type: 'SET_MATCHED_CARD',
+              payload: [cardsFlipped[0], cardsFlipped[1]]
+            })
+          : dispatch({ type: 'CLEAN_FLIPPED_CARD' })
+      }, 1000)
+
+      return () => clearTimeout(timer)
+    }
+  }, [cardsFlipped])
+
   {
     console.log('soy playmemory y me renderizo')
-    console.log(cardsFlipped)
-    console.log(cardsMatched)
   }
   return (
     <>
@@ -45,9 +62,9 @@ const PlayMemory = () => {
         initTime={60}
       />
       <div className='cards'>
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <Card
-            key={index}
+            key={card.id}
             card={card}
             onClick={() => setFlippedCard({ dispatch, cardsFlipped, card })}
             cardsFlipped={cardsFlipped}
