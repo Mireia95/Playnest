@@ -15,4 +15,5 @@
   color: var(--MG-color-02);
   background-color: var(--MG-color-01);
   margin-bottom: 32px;
+  z-index: 10;
 }

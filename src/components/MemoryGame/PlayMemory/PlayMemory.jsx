@@ -12,6 +12,8 @@ import Card from '../Card/Card'
 
 import GameOver from '../../General/GameOver/GameOver'
 import Timer from '../../General/Timer/Timer'
+import { useEffectEvent } from 'react'
+import WinGame from '../../General/WinGame/WinGame'
 
 const PlayMemory = () => {
   const [state, dispatch] = useReducer(
@@ -29,8 +31,6 @@ const PlayMemory = () => {
   useEffect(() => {
     if (cardsFlipped.length === 2) {
       let matched = cardsFlipped[0].alt === cardsFlipped[1].alt ? true : false
-
-      console.log(matched)
       const timer = setTimeout(() => {
         matched
           ? dispatch({
@@ -44,23 +44,29 @@ const PlayMemory = () => {
     }
   }, [cardsFlipped])
 
+  //win game
+  useEffect(() => {
+    if (cardsMatched.length === 20) {
+      //you win the game
+      dispatch({ type: 'SET_WIN_GAME' })
+    }
+  }, [cardsMatched])
+
   {
     console.log('soy playmemory y me renderizo')
   }
   return (
     <>
+      {mode === 'win' ? <WinGame path={'/memorygame/play'} /> : null}
       {mode === 'gameover' ? (
-        <GameOver
-          general={true}
-          path={'/memorygame/play'}
-          homePath={'/memorygame'}
+        <GameOver general={true} path={'/memorygame/play'} />
+      ) : null}
+      {mode !== 'win' ? (
+        <Timer
+          gameOverFunction={() => dispatch({ type: 'SET_GAMEOVER' })}
+          initTime={60}
         />
       ) : null}
-
-      <Timer
-        gameOverFunction={() => dispatch({ type: 'SET_GAMEOVER' })}
-        initTime={60}
-      />
       <div className='cards'>
         {cards.map((card) => (
           <Card

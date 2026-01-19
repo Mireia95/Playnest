@@ -31,6 +31,10 @@ export const memoryGameReducer = (state, action) => {
 
     case 'SET_GAMEOVER':
       return { ...state, mode: MODE.gameover }
+
+    case 'SET_WIN_GAME':
+      return { ...state, mode: MODE.win }
+
     default:
       return state
   }

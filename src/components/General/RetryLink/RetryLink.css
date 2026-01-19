@@ -1,0 +1,13 @@
+.retryButt {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.retryButt > img {
+  width: 24px;
+}
