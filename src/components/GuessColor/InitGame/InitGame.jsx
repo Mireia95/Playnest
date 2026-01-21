@@ -16,7 +16,7 @@ const InitGame = () => {
       <p className='infoGame'>
         {' '}
         Read the word on the screen and choose the correct color to score points
-        before the 30 seconds run out.{' '}
+        before the 30 seconds run out. Be careful, you have only 3 lifes.{' '}
       </p>
       <ButtonLink
         alt='play button'

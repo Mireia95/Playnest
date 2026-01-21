@@ -13,6 +13,7 @@ import { setRandomColors } from '../../../reducer/GuessColor/actions';
 import { colors } from '../../../utils/GuessColor/colors';
 import GameOver from '../../General/GameOver/GameOver';
 import Points from '../../General/Points/Points';
+import Lifes from '../Lifes/Lifes';
 
 const PlayGame = () => {
   const [state, dispatch] = useReducer(
@@ -20,15 +21,23 @@ const PlayGame = () => {
     GUESSCOLOR_INITIAL_STATE
   );
 
-  const { points, colorPrint, colorOptions, gameover } = state;
+  const { points, colorPrint, colorOptions, lifes, gameover } = state;
 
   useEffect(() => {
     setRandomColors(colors, dispatch);
   }, []);
 
+  //lifes
+  useEffect(() => {
+    if (lifes.length === 0) {
+      dispatch({ type: 'SET_GAMEOVER' });
+    }
+  }, [lifes]);
+
   return (
     <>
       <div className='infoBar'>
+        <Lifes lifes={lifes} />
         <Timer
           gameOverFunction={() => dispatch({ type: 'SET_GAMEOVER' })}
           initTime={30}
