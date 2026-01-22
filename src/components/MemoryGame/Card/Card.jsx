@@ -1,11 +1,12 @@
+import React from 'react'
 import './Card.css'
 
-const Card = ({ card, onClick, cardsFlipped, cardsMatched }) => {
-  let isTurned = cardsFlipped.includes(card) || cardsMatched.includes(card)
+const Card = React.memo(({ card, onClick, isTurned }) => {
+  console.log('soy Card y me renderizo')
 
   const handleClick = () => {
     if (!isTurned) {
-      onClick()
+      onClick(card)
     }
   }
 
@@ -21,6 +22,6 @@ const Card = ({ card, onClick, cardsFlipped, cardsMatched }) => {
       </div>
     </div>
   )
-}
+})
 
 export default Card

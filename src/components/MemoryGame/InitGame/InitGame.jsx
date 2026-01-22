@@ -1,6 +1,7 @@
-import './InitGame.css';
+import './InitGame.css'
 
 const InitGame = () => {
+  console.log('soy InitGame y me renderizo')
   return (
     <>
       <img className='title' src='./assets/MemoryGame/MemoryGameTitle.png' />
@@ -9,7 +10,7 @@ const InitGame = () => {
         possible. You only have 60 seconds available, so harry up!
       </h3>
     </>
-  );
-};
+  )
+}
 
-export default InitGame;
+export default InitGame

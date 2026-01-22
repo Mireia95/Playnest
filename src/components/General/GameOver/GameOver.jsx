@@ -17,8 +17,8 @@ const GameOver = ({ points = 0, general = false, path }) => {
             <>
               <div className='stars'>
                 <img src={starFull} alt='star' />
-                <img src={points < 10 ? starEmpty : starFull} alt='star' />
-                <img src={points < 30 ? starEmpty : starFull} alt='star' />
+                <img src={points < 50 ? starEmpty : starFull} alt='star' />
+                <img src={points < 140 ? starEmpty : starFull} alt='star' />
               </div>
               <h3> {points} points </h3>
             </>

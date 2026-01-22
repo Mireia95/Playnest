@@ -27,21 +27,11 @@ export const shuffleCards = (dispatch) => {
   dispatch({ type: 'SET_CARDS', payload: cardsForGame })
 }
 
-export const compareCards = (cardFlipped, card) => {
-  const matched = cardFlipped[0].alt === card.alt ? true : false
+export const compareCards = (cardsFlipped) => {
+  let matched = cardsFlipped[0].alt === cardsFlipped[1].alt ? true : false
   return matched
 }
 
-export const setFlippedCard = ({ dispatch, cardsFlipped, card }) => {
-  if (cardsFlipped.length < 2) {
-    dispatch({ type: 'SET_FLIPPED_CARD', payload: card })
-  }
-  console.log(cardsFlipped.length)
-
-  /* if (cardsFlipped.length === 1) {
-    let matched = compareCards(cardsFlipped, card)
-    matched
-      ? dispatch({ type: 'SET_MATCHED_CARD', payload: card })
-      : dispatch({ type: 'CLEAN_FLIPPED_CARD' })
-  } */
+export const setFlippedCard = ({ dispatch, card }) => {
+  dispatch({ type: 'SET_FLIPPED_CARD', payload: card })
 }

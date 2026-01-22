@@ -1,6 +1,7 @@
-import { useEffect, useReducer } from 'react'
+import { useCallback, useEffect, useReducer } from 'react'
 import './PlayMemory.css'
 import {
+  compareCards,
   setFlippedCard,
   shuffleCards
 } from '../../../reducer/MemoryGame/actions'
@@ -12,7 +13,6 @@ import Card from '../Card/Card'
 
 import GameOver from '../../General/GameOver/GameOver'
 import Timer from '../../General/Timer/Timer'
-import { useEffectEvent } from 'react'
 import WinGame from '../../General/WinGame/WinGame'
 
 const PlayMemory = () => {
@@ -23,6 +23,7 @@ const PlayMemory = () => {
 
   const { cards, cardsFlipped, cardsMatched, mode } = state
 
+  //shuffle card at start game
   useEffect(() => {
     shuffleCards(dispatch)
   }, [])
@@ -30,7 +31,7 @@ const PlayMemory = () => {
   //compare cards
   useEffect(() => {
     if (cardsFlipped.length === 2) {
-      let matched = cardsFlipped[0].alt === cardsFlipped[1].alt ? true : false
+      let matched = compareCards(cardsFlipped)
       const timer = setTimeout(() => {
         matched
           ? dispatch({
@@ -52,6 +53,14 @@ const PlayMemory = () => {
     }
   }, [cardsMatched])
 
+  //flipped card function
+  const setFlipped = useCallback(
+    (card) => {
+      setFlippedCard({ dispatch, card })
+    },
+    [dispatch]
+  )
+
   {
     console.log('soy playmemory y me renderizo')
   }
@@ -72,9 +81,13 @@ const PlayMemory = () => {
           <Card
             key={card.id}
             card={card}
-            onClick={() => setFlippedCard({ dispatch, cardsFlipped, card })}
-            cardsFlipped={cardsFlipped}
-            cardsMatched={cardsMatched}
+            onClick={setFlipped}
+            isTurned={
+              cardsFlipped.some((a) => a.id === card.id) ||
+              cardsMatched.some((a) => a.id === card.id)
+                ? true
+                : false
+            }
           />
         ))}
       </div>

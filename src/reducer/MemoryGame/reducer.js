@@ -13,9 +13,12 @@ export const memoryGameReducer = (state, action) => {
       return { ...state, cards: [...action.payload] }
 
     case 'SET_FLIPPED_CARD':
-      return {
-        ...state,
-        cardsFlipped: [...state.cardsFlipped, action.payload]
+      //!CHECK
+      if (state.cardsFlipped.length < 2) {
+        return {
+          ...state,
+          cardsFlipped: [...state.cardsFlipped, action.payload]
+        }
       }
     case 'CLEAN_FLIPPED_CARD':
       return {
