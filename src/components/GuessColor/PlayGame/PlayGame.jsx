@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useCallback, useReducer } from 'react';
 import CardsColorDiv from '../CardsColorDiv/CardsColorDiv';
 import './PlayGame.css';
 import { useEffect } from 'react';
@@ -12,10 +12,12 @@ import {
 import { setRandomColors } from '../../../reducer/GuessColor/actions';
 import { colors } from '../../../utils/GuessColor/colors';
 import GameOver from '../../General/GameOver/GameOver';
-import Points from '../../General/Points/Points';
+
 import Lifes from '../Lifes/Lifes';
+import Points from '../Points/Points';
 
 const PlayGame = () => {
+  console.log('soy PLayGame y me renderizo');
   const [state, dispatch] = useReducer(
     guessColorReducer,
     GUESSCOLOR_INITIAL_STATE
@@ -23,6 +25,7 @@ const PlayGame = () => {
 
   const { points, colorPrint, colorOptions, lifes, gameover } = state;
 
+  //random colors
   useEffect(() => {
     setRandomColors(colors, dispatch);
   }, []);
@@ -34,14 +37,17 @@ const PlayGame = () => {
     }
   }, [lifes]);
 
+  //gameover function
+  //uso use.Callback para memorizar la funcion del dispatch y pasarla por prop a <Timer/>
+  const setGameover = useCallback(() => {
+    dispatch({ type: 'SET_GAMEOVER' });
+  }, []);
+
   return (
     <>
       <div className='infoBar'>
         <Lifes lifes={lifes} />
-        <Timer
-          gameOverFunction={() => dispatch({ type: 'SET_GAMEOVER' })}
-          initTime={30}
-        />
+        <Timer gameOverFunction={setGameover} initTime={30} />
 
         <Points points={points} />
       </div>
