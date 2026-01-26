@@ -1,9 +1,9 @@
-import Lottie from 'lottie-react'
-import ControllerPlay from '../../../public/assets/ControllerPlay.json'
-import CardGame from '../../components/Home/CardGame/CardGame'
-import Footer from '../../components/Home/Footer/Footer'
-import Header from '../../components/Home/Header/Header'
-import './Home.css'
+import Lottie from 'lottie-react';
+import ControllerPlay from '../../../public/assets/ControllerPlay.json';
+import CardGame from '../../components/Home/CardGame/CardGame';
+import Footer from '../../components/Home/Footer/Footer';
+import Header from '../../components/Home/Header/Header';
+import './Home.css';
 
 const Home = () => {
   return (
@@ -18,11 +18,11 @@ const Home = () => {
           <h3> Which game would you like to start? </h3>
         </div>
         <section id='games' className='flex'>
-          <CardGame
+          {/*  <CardGame
             link='/pokemon'
             img='./assets/PokemonBattleCard.png'
             alt='pokemon battle'
-          />
+          /> */}
           <CardGame
             link='/guesscolor'
             img='./assets/GuessTheColorCard.svg'
@@ -37,7 +37,7 @@ const Home = () => {
       </main>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
