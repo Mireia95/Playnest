@@ -1,7 +1,7 @@
 # Playnest
 
 <div align="center">
-<img src=".public/assets/playnestDesktop.png" alt="desktop preview" />
+<img src="https://res.cloudinary.com/dr2vohk2z/image/upload/v1769461447/Playnest/playnestDesktop_irzomt.png" alt="desktop preview" />
 </div>
 
 ## Project Link:
