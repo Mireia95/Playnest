@@ -1,14 +1,13 @@
 .guessTheColorTitle {
   max-width: 450px;
   margin: 24px;
-  margin-top: 80px;
+  margin-top: 150px;
 }
 
 .guessTheColorTitle > img {
   width: 100%;
 }
 
-#guessColor > h2,
 #guessColor > p {
   font-family: var(--GC-font-02);
   font-weight: 400;
@@ -20,8 +19,8 @@
 
 #guessColor > .infoGame {
   text-align: center;
-  margin: 0 8px;
-  max-width: 500px;
+  margin: 0 24px;
+  max-width: 550px;
   color: var(--GC-color-text);
 }
 
