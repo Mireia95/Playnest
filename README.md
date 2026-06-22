@@ -6,7 +6,7 @@
 
 ## Project Link:
 
----
+https://playnest-alpha.vercel.app
 
 ## Development with:
 
