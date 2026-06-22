@@ -1,5 +1,5 @@
 import InitGame from '../../components/GuessColor/InitGame/InitGame';
-import './Guesscolor.css';
+import './GuessColor.css';
 
 const GuessColor = () => {
   return <InitGame />;
